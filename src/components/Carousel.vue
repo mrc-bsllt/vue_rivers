@@ -3,10 +3,7 @@
         <Slide 
             v-for="(river, index) in rivers" 
             :key="index" 
-            :img="river.image"
-            :title="river.title"
-            :slug="river.slug"
-            :length="river.length"
+            :river="river"
             class="slide px-3" 
         />
     </agile>

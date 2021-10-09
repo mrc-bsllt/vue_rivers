@@ -1,8 +1,9 @@
 <template>
   <div id="home" :style="{ 'background-color': colors.secondary }">
       <Header />
-      <Main v-if="$route.name !== 'Rivers'" />
-      <Rivers v-else :rivers="rivers" />
+      <Main v-if="$route.name === 'Home'" />
+      <Rivers v-else-if="$route.name === 'Rivers'" :rivers="rivers" />
+      <River v-else :rivers="rivers" />
   </div>
 </template>
 
@@ -10,13 +11,15 @@
   import Header from '../components/Header.vue';
   import Main from '../components/Main.vue';
   import Rivers from '../components/Rivers.vue';
+  import River from '../components/River.vue';
 
   export default {
     name: "Home",
     components: {
       Header,
       Main,
-      Rivers
+      Rivers,
+      River
     },
     props: {
       rivers: {

@@ -2,12 +2,24 @@
   <div class="slide__wrapper">
     <div :style="{ 'background-color': colors.tertiary }" class="slide__outer p-3">
         <div class="image__wrapper">
-            <img :src="img" :alt="slug" class="w-full h-full">
+            <img :src="river.image" :alt="river.slug" class="w-full h-full">
         </div>
-    </div>
 
-    <div :style="{ 'color': colors.tertiary }" class="meta">
-        <p class="text-center py-2">{{ length }}</p>
+        <div :style="{ 'color': colors.secondary }" class="meta py-2 flex flex-row justify-between flex-nowrap">
+            <div>
+                <h3 class="font-bold">{{ river.title }}</h3>
+                <p>{{ river.length }}</p>
+            </div>
+            <div>
+                <router-link 
+                    :to="{ name: 'River', params: { slug: river.slug } }" 
+                    :style="{ 'background-color': colors.primary, 'color': colors.tertiary }" 
+                    class="discover_button"
+                >
+                    Discover    
+                </router-link>
+            </div>
+        </div>
     </div>
   </div>
 </template>
@@ -20,7 +32,7 @@
                 colors: this.$store.state.colors
             }
         },
-        props: ['text', 'img', 'title', 'slug', 'length']
+        props: ['river']
     }
 </script>
 
@@ -36,5 +48,11 @@
                 object-position: center;
             }
         }
+    }
+
+    .discover_button {
+        padding: 5px 15px;
+        border-radius: 10px;
+
     }
 </style>

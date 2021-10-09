@@ -1,17 +1,20 @@
 <template>
   <div id="app" class="h-screen relative" :style="{ 'background-color': colors.primary }">
     <ToggleButton />
+    <BackButton v-if="$route.name === 'River'" />
     <router-view :rivers="rivers" />
   </div>
 </template>
 
 <script>
   import ToggleButton from './components/ToggleButton.vue';
+  import BackButton from './components/BackButton.vue';
 
   export default {
     name: "App",
     components: {
-      ToggleButton
+      ToggleButton,
+      BackButton
     },
     data() {
       return {

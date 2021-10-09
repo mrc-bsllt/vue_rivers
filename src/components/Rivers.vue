@@ -28,6 +28,12 @@
     height: calc(100% - #{$headerHeight});
   }
 
+  .agile,
+  .agile__list,
+  .agile__track {
+    @include dim($height: 100%);
+  }
+
   .agile__actions {
     @include position(absolute, $top: 50%);
     transform: translateY(-50%);
