@@ -1,0 +1,31 @@
+@mixin dim($width: auto, $height: auto) {
+    width: $width;
+    height: $height;
+} 
+
+@mixin flex($dir: row, $justify: center, $align: center, $wrap: nowrap) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+}
+
+@mixin position($pos, $top: auto, $right: auto, $bottom: auto, $left: auto) {
+    position: $pos;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin media-desktop {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin boxShadow($color) {
+    -webkit-box-shadow: 1px 4px 12px 4px rgba($color ,0.37); 
+    box-shadow: 1px 4px 12px 4px rgba($color ,0.37);
+}
