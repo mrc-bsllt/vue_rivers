@@ -1,6 +1,8 @@
 <template>
-  <header :style="{ 'border-bottom-color': colors.borderColor }">
-      <h1 :style="{ 'color': colors.tertiary }" class="text-center uppercase">Rivers</h1>
+  <header :style="{ 'border-bottom-color': colors.borderColor }" class="flex felx-row justify-center items-center flex-nowrap">
+      <router-link :to="{ name: 'Home' }">
+        <h1 :style="{ 'color': colors.tertiary }" class="uppercase">Rivers</h1>
+      </router-link>
   </header>
 </template>
 
@@ -20,7 +22,6 @@
 
     header {
         height: $headerHeight;
-        line-height: $headerHeight;
         border-bottom-width: 2px;
         border-bottom-style: solid;
 
