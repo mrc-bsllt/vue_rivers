@@ -3,6 +3,12 @@
     height: $height;
 }
 
+@mixin adapt_image {
+    @include dim(100%, 100%);
+    object-fit: cover;
+    object-position: center;
+}
+
 @mixin position($pos, $top: auto, $right: auto, $bottom: auto, $left: auto) {
     position: $pos;
     top: $top;

@@ -18,6 +18,11 @@ const routes = [
     path: "/rivers/:slug",
     name: "River",
     component: () => import("../views/Home.vue")
+  },
+  {
+    path: "/add-river",
+    name: "AddRiver",
+    component: () => import("../views/Home.vue")
   }
 ];
 

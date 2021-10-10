@@ -80,9 +80,7 @@
       border-radius: 10px;
 
       img {
-        @include dim(100%, 100%);
-        object-fit: cover;
-        object-position: center;
+        @include adapt_image;
         border-radius: 10px;
       }
     }

@@ -3,6 +3,7 @@
       <Header />
       <Main v-if="$route.name === 'Home'" />
       <Rivers v-else-if="$route.name === 'Rivers'" :rivers="rivers" />
+      <AddRiver v-else-if="$route.name === 'AddRiver'" />
       <River v-else :rivers="rivers" />
   </div>
 </template>
@@ -13,6 +14,7 @@
   import Main from '../components/Main.vue';
   import Rivers from '../components/Rivers.vue';
   import River from '../components/River.vue';
+  import AddRiver from '../components/AddRiver.vue';
 
   export default {
     name: "Home",
@@ -20,7 +22,8 @@
       Header,
       Main,
       Rivers,
-      River
+      River,
+      AddRiver
     },
     props: {
       rivers: {
