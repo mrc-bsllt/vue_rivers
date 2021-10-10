@@ -1,6 +1,6 @@
 <template>
     <router-link 
-        to="/rivers" 
+        :to="{ name: 'Rivers' }" 
         id="init_button"
         :style="{ 'background-color': colors.primary }" 
         class="flex flex-row justify-center items-center flex-nowrap animate-bounce"

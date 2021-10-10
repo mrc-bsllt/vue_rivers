@@ -1,5 +1,5 @@
 <template>
-  <router-link to="/rivers" id="back_button" :style="{ 'background-color': colors.secondary, 'color': colors.tertiary }">Back</router-link>
+  <router-link :to="{ name: 'Rivers' }" id="back_button" :style="{ 'background-color': colors.secondary, 'color': colors.tertiary }">Back</router-link>
 </template>
 
 <script>
