@@ -11,14 +11,6 @@
             return {
                 colors: this.$store.state.colors
             }
-        },
-        mounted() {
-            //initGreetings();
-        },
-        methods: {
-            // initGreetings(index) {
-
-            // }
         }
     }
 </script>

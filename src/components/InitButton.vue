@@ -17,11 +17,6 @@
             return {
                 colors: this.$store.state.colors
             }
-        },
-        computed: {
-            getMode() {
-                return this.$store.state.darkMode;
-            }
         }
     }
 </script>

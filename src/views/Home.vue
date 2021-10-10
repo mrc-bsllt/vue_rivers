@@ -8,6 +8,7 @@
 </template>
 
 <script>
+
   import Header from '../components/Header.vue';
   import Main from '../components/Main.vue';
   import Rivers from '../components/Rivers.vue';
@@ -33,6 +34,7 @@
       }
     }
   };
+
 </script>
 
 <style lang="scss">

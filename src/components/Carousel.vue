@@ -29,6 +29,7 @@
         },
         data() {
             return {
+                // carousel options to pass to the component
                 carouselOptions: {
                     centerMode: true,
                     slidesToShow: 1,
@@ -45,7 +46,3 @@
         }
     }
 </script>
-
-<style lang="scss">
-
-</style>

@@ -1,14 +1,6 @@
 @mixin dim($width: auto, $height: auto) {
     width: $width;
     height: $height;
-} 
-
-@mixin flex($dir: row, $justify: center, $align: center, $wrap: nowrap) {
-    display: flex;
-    flex-direction: $dir;
-    justify-content: $justify;
-    align-items: $align;
-    flex-wrap: $wrap;
 }
 
 @mixin position($pos, $top: auto, $right: auto, $bottom: auto, $left: auto) {

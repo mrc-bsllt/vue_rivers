@@ -2,7 +2,7 @@
   <button 
     id="toggle_mode_button" 
     :style="{ 'background-color': colors.secondary }" 
-    :class="getMode ? 'dark' : 'active'"
+    :class="buttonClass"
     @click="toggleMode"
 >
   </button>
@@ -13,18 +13,18 @@ export default {
     name: "ToggleButton",
     data() {
         return {
+            buttonClass: 'dark',
             colors: this.$store.state.colors
         }
     },
     methods: {
+        // Switch theme mode
       toggleMode() {
         this.$store.commit('changeMode');
-      },
-    },
-    computed: {
-        getMode() {
-            return this.$store.state.darkMode;
-        }
+
+        var currentMode = this.$store.state.darkMode;
+        this.buttonClass = currentMode ? 'dark' : 'active';
+      }
     }
 }
 </script>

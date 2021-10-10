@@ -4,7 +4,7 @@
 
 <script>
     export default {
-        name: "BakcButton",
+        name: "BackButton",
         data() {
             return {
                 colors: this.$store.state.colors

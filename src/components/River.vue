@@ -35,6 +35,7 @@
           }
         },
         mounted() {
+          // Get the specific river
           var river = this.rivers.filter(
             (element) => {
               return element.slug === this.$route.params.slug;
