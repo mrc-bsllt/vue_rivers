@@ -4,6 +4,7 @@
         id="init_button"
         :style="{ 'background-color': colors.primary }" 
         class="flex flex-row justify-center items-center flex-nowrap animate-bounce"
+        :class="this.$store.state.darkMode ? 'dark' : ''"
     >
         <span :style="{ 'color': colors.tertiary }" class="uppercase">Discover the rivers</span>
     </router-link>

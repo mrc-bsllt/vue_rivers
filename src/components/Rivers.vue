@@ -1,6 +1,8 @@
 <template>
   <div id="rivers">
     <Carousel :rivers="rivers" />
+
+    <router-link :to="{ name: 'AddRiver' }" :style="{ 'background-color': colors.secondary, 'color': colors.tertiary }" class="btn">Add River</router-link>
   </div>
 </template>
 
@@ -16,6 +18,11 @@
         rivers: {
           type: Array,
           required: true
+        }
+      },
+      data() {
+        return {
+          colors: this.$store.state.colors
         }
       }
   }

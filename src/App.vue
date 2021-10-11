@@ -3,7 +3,7 @@
     <ToggleButton />
     <BackButton v-if="$route.name === 'River'" />
 
-    <router-view :rivers="rivers" />
+    <router-view :rivers="rivers" @sendNewRiver="getNewRiver" />
   </div>
 </template>
 
@@ -33,13 +33,17 @@
           .get(this.base_url)
           .then(
             (response) => {
-              var data = response.data,
-              mapReplace = { 'km': " ", ',' :"." };
+              var data = response.data;
+
+              if(localStorage.newRivers) {
+                var addedRivers = JSON.parse(localStorage.newRivers);
+                data = data.concat(addedRivers);
+              }
 
               // Add the key for the length of type number
               var newData = data.map(
                 (element) => {
-                  var convertedLength = parseFloat(element.length.replace(/km|,/gi, function(matched) { return mapReplace[matched]; }));
+                  let convertedLength = this.StringToNumber(element, 'length');
 
                   return element = {...element, lengthToNumber: convertedLength}
                 }
@@ -49,9 +53,24 @@
             }
           );
       },
+
+      // Convert length into number
+      StringToNumber(el, key) {
+        var mapReplace = { 'km': " ", ',' :"." };
+        return parseFloat(el[key].replace(/km|,/gi, function(matched) { return mapReplace[matched]; }));
+      },
+
       // Sort Rivers
       SortRivers(array, key) {
         return array.sort((a, b) =>  a[key] - b[key]);
+      },
+
+      // Get new River from 'Home' component
+      getNewRiver(data) {
+        let convertedLength = this.StringToNumber(data, 'length');
+        data = {...data, lengthToNumber: convertedLength};
+
+        this.rivers = this.SortRivers([...this.rivers, data], 'lengthToNumber');
       }
     },
     mounted() {

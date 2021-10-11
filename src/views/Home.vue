@@ -3,7 +3,7 @@
       <Header />
       <Main v-if="$route.name === 'Home'" />
       <Rivers v-else-if="$route.name === 'Rivers'" :rivers="rivers" />
-      <AddRiver v-else-if="$route.name === 'AddRiver'" />
+      <AddRiver v-else-if="$route.name === 'AddRiver'" @sendNewRiver="sendNewRiver" />
       <River v-else :rivers="rivers" />
   </div>
 </template>
@@ -34,6 +34,12 @@
     data() {
       return {
         colors: this.$store.state.colors
+      }
+    },
+    methods: {
+      //Get river from 'AddRiver' Component
+      sendNewRiver(data) {
+        this.$emit('sendNewRiver', data);
       }
     }
   };

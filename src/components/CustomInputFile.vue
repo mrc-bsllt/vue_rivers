@@ -33,6 +33,7 @@
 
     .custom_file_upload {
         @include dim(100px, 100px);
+        margin: 10px 0 !important;
         cursor: pointer;
         border-width: 1px;
         border-style: solid;
