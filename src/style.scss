@@ -12,8 +12,15 @@
 .btn {
     padding: 15px 30px;
     border-radius: 30px;
-    @include position(absolute, $bottom: 2%, $left: 50%);
-    transform: translateX(-50%);
+
+    &:not(.btn-add-river) {
+        @include position(absolute, $bottom: 2%, $left: 50%);
+        transform: translateX(-50%);
+    }
+
+    &-add-river {
+        text-transform: uppercase;
+    }
 }
 
 // scrollbar
